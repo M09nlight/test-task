@@ -1,0 +1,111 @@
+.header {
+	position: relative;
+	z-index: 9999;
+	[class*="__container"] {
+		@media (max-width: $mobile) {
+			padding: 0;
+		}
+	}
+	&__inner {
+		position: relative;
+		z-index: 9999;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding-top: rem(61);
+		@media (max-width: $mobile) {
+			justify-content: center;
+			text-transform: uppercase;
+			padding-bottom: rem(20);
+			margin: 0 auto;
+			background-color: #0e1014;
+		}
+		@include adaptiveValue("padding-top", 61, 20);
+	}
+
+	&__logo {
+		margin-top: rem(-4);
+	}
+
+	&__navigation {
+		display: flex;
+		gap: 30px;
+		@include adaptiveValue("font-size", 16, 12, 768, 320);
+		@include adaptiveValue("gap", 30, 16);
+	}
+
+	&__navigation-item {
+		position: relative;
+		z-index: 10;
+		transition: color 0.3s ease;
+		&:hover {
+			color: rgb(252, 176, 69);
+		}
+		&:last-child {
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		@media (max-width: $pc) {
+			display: none;
+		}
+	}
+}
+.logo {
+	@media (max-width: $mobile) {
+		display: none;
+	}
+	&__top {
+	}
+
+	&__bottom {
+		font-family: Montserrat;
+		font-size: rem(10);
+		font-weight: 300;
+		line-height: normal;
+		max-width: rem(165);
+		padding-top: rem(14);
+	}
+}
+.contacts {
+	&__phone {
+		text-align: right;
+		font-weight: 500;
+		line-height: normal;
+		margin-bottom: em(21);
+		@include adaptiveValue("margin-bottom", 21, 8);
+		transition: color 0.3s ease;
+		&:hover {
+			color: rgb(252, 176, 69);
+		}
+	}
+
+	&__links {
+		margin-bottom: em(19);
+		@include adaptiveValue("margin-bottom", 19, 10);
+	}
+
+	&__link {
+		margin-left: rem(30);
+		@media (max-width: $pc) {
+			margin-left: 0;
+			margin-right: rem(10);
+		}
+	}
+	&__social-link {
+	}
+
+	&__address {
+		text-align: right;
+		line-height: normal;
+		transition: color 0.3s ease;
+		&:hover {
+			color: rgb(252, 176, 69);
+		}
+		@include adaptiveValue("font-size", 16, 14);
+	}
+}

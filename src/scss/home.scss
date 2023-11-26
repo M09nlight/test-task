@@ -1,0 +1,167 @@
+.main {
+    position: relative;
+    z-index: 10;
+}
+.section {
+    padding-top: 94px;
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    @include adaptiveValue("padding-top", 94, 40);
+}
+.section-left {
+    max-width: rem(362);
+    &__title {
+        font-size: em(48);
+        line-height: normal;
+        @include adaptiveValue("font-size", 48, 36);
+    }
+
+    &__subtitle {
+        padding-top: 30px;
+        max-width: rem(275);
+        font-size: rem(18);
+        @include adaptiveValue("padding-top", 30, 15);
+    }
+    @media (max-width: $mobile) {
+        max-width: 100%;
+    }
+}
+.section-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    max-width: rem(330);
+    &__title {
+        text-align: right;
+        font-size: em(18);
+        font-weight: 500;
+        line-height: normal;
+        padding-left: rem(38);
+        padding-bottom: rem(40);
+        @include adaptiveValue("padding-bottom", 40, 20);
+        @media (max-width: $mobile) {
+            text-align: left;
+            padding-left: 0;
+        }
+    }
+    &__grid {
+        margin-bottom: em(61);
+        @media (max-width: $mobileSmall) {
+            margin-bottom: 0;
+        }
+    }
+    @media (max-width: $mobile) {
+        max-width: 100%;
+        padding-top: rem(45);
+        align-items: flex-start;
+        margin-bottom: 55px;
+    }
+}
+.features {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    justify-items: flex-end;
+    gap: 30px;
+    @include adaptiveValue("row-gap", 30, 14);
+    @media (max-width: $mobile) {
+        justify-items: flex-start;
+        width: 100%;
+        column-gap: 0;
+    }
+    &__item {
+        text-align: right;
+        @media (max-width: $mobile) {
+            text-align: left;
+        }
+        @media (max-width: $mobileSmall) {
+            &:nth-child(3) {
+                order: 0;
+            }
+            &:nth-child(1) {
+                order: 1;
+            }
+            &:nth-child(2) {
+                order: 2;
+            }
+            &:nth-child(4) {
+                order: 3;
+            }
+        }
+    }
+
+    &__item-title {
+        text-transform: uppercase;
+        font-size: em(18);
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: em(0.9);
+        padding-bottom: 6px;
+        @include adaptiveValue("font-size", 18, 13);
+        &--media-small {
+            display: none;
+        }
+
+        @media (max-width: $mobileSmall) {
+            position: relative;
+            padding-left: 15px;
+            &::before {
+                content: url("@img/icons/line.svg");
+                position: absolute;
+                left: 0;
+                top: -4px;
+                background: linear-gradient(90deg, #fcb045 36.99%, #fd1d1d 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                padding-right: 5px;
+            }
+            &--media-hight {
+                display: none;
+            }
+            &--media-small {
+                display: block;
+            }
+        }
+    }
+
+    &__item-desc {
+        font-family: Montserrat;
+        line-height: normal;
+        @include adaptiveValue("font-size", 16, 12);
+        @media (max-width: $mobileSmall) {
+            text-align: left;
+            display: none;
+        }
+    }
+}
+.button {
+    width: em(262);
+    height: em(61);
+    background: #4077f3;
+    transition: all 0.3s ease;
+    &:hover {
+        transform: scale(1.01);
+    }
+    @media (max-width: $mobileSmall) {
+        display: none;
+    }
+}
+.gradient-one {
+    background: linear-gradient(120deg, #fcb045 0%, #fd1d1d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradient-two {
+    background: linear-gradient(90deg, #fcb045 36.99%, #fd1d1d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

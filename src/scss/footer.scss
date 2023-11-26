@@ -1,0 +1,107 @@
+.footer {
+    position: relative;
+    z-index: 10;
+    padding-top: em(69);
+    @include adaptiveValue("padding-top", 69, 45);
+    @media (max-width: $mobile) {
+        background-color: #0e1014;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $pc) {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            column-gap: rem(100);
+        }
+        @media (max-width: $mobile) {
+            row-gap: rem(23);
+        }
+    }
+
+    &__about {
+    }
+    &__about-inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__menu-inner {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 52px;
+    }
+
+    &__title {
+        color: #656566;
+
+        font-size: em(14);
+        @include adaptiveValue("font-size", 14, 12);
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: em(0.7);
+        text-transform: uppercase;
+        padding-bottom: em(20);
+    }
+
+    &__menu-colum-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        line-height: normal;
+        margin-bottom: em(10);
+        transition: color 0.3s ease;
+        &:hover {
+            color: rgb(252, 176, 69);
+        }
+        @include adaptiveValue("font-size", 16, 14);
+    }
+
+    &__menu-colum-right {
+        display: flex;
+        flex-direction: column;
+        @media (max-width: $mobile) {
+            & .footer__item:nth-child(2) {
+                order: -1;
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        @media (max-width: $pc) {
+            align-items: flex-start;
+        }
+    }
+
+    &__rights {
+        text-align: right;
+        font-family: Montserrat;
+        font-size: em(12);
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: rem(20);
+        padding-top: rem(33);
+        width: 100%;
+        @include adaptiveValue("padding-top", 33, 50);
+        @media (max-width: $mobile) {
+            margin-bottom: rem(60);
+            text-align: left;
+        }
+    }
+    &__rights-top {
+        padding-bottom: 5px;
+    }
+    &__rights-bottom:link,
+    &__rights-bottom:visited {
+        text-decoration: underline;
+        transition: color 0.3s ease;
+        &:hover {
+            color: rgb(252, 176, 69);
+        }
+    }
+}
