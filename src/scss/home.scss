@@ -72,7 +72,6 @@
     @include adaptiveValue("row-gap", 30, 14);
     @media (max-width: $mobile) {
         justify-items: flex-start;
-        width: 100%;
         column-gap: 0;
     }
     &__item {
